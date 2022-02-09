@@ -1,0 +1,27 @@
+df['date'] = pd.to_datetime(df['invoice_date'], errors='coerce')
+df['Month_Transaction'] = df['date'].dt.month
+df['Total_transaction'] = df['unit_price']*df['quantity']
+import matplotlib.pyplot as plt
+df_year = df.groupby(['Month_Transaction'])['customer_id'].count()
+df_year.plot(x='Month_Transaction', y='customer_id', kind='bar', title='Graph of Monthly Transaction')
+plt.xlabel('Month_Transaction')
+plt.ylabel('Num_of_Customer')
+plt.tight_layout()
+plt.show()
+
+
+df_province = df.groupby(['province'])['customer_id'].count()
+df_province.plot(x='province', y='customer_id', kind='bar', title='Graph of Monthly Transaction per Province')
+plt.xlabel('Province')
+plt.ylabel('Num_of_Transaction')
+plt.tight_layout()
+plt.show()
+
+df_province = df.groupby(['province'])['Total_transaction'].count()
+df_province.plot(x='province', y='customer_id', kind='bar', title='Graph')
+plt.xlabel('Province')
+plt.ylabel('Transaction value')
+plt.tight_layout()
+plt.show()
+
+

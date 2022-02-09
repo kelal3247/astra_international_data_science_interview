@@ -1,0 +1,19 @@
+n 	= 10 person
+v 	= n - 1 = 9 
+
+Sp 	= 4,3
+alfa	= 0,05
+
+t alfa/2,v
+t 0,025,9 = 2,262
+
+ASUMSI MEAN POPULASI:
+X - 2,262 D < Ux < X + 2,262 D
+
+D = Sp/(n)*1/2
+D = 4,3/(10)*1/2 = 1,36
+
+a = 96,93 < Ux < 103,07
+b = 91,93 < Ux < 98,07
+
+pilih a karena 96,93 < Ux < 103,07
